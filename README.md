@@ -2,17 +2,21 @@
 
 My personal agent skills (prompts only).
 
-## Almighty UGC Factory
+## almighty-ugc-factory/
 
-A three-skill UGC prompt system. Start with the master — it asks whether
-you want a talking-head script or a multi-shot video with camera
-direction, then routes to the matching sub-skill.
+ONE self-contained folder — copy it anywhere, use it with any AI.
+The top-level `SKILL.md` inside is the master: it asks whether you
+want a talking-head script or a multi-shot video with camera
+direction, then routes to the matching sub-skill, both nested inside
+the same folder:
 
-| Folder | Skill | What it does |
-|---|---|---|
-| `almighty-ugc-factory/` | **Master (start here)** | Routes every UGC request: asks "talking-head script or multi-shot video with camera direction?" |
-| `ai-ugc-video-production/` | Route A — talking-head | Script templates, product-acting scenarios, subtitle styles, word-count rules (from [agent-media-skill](https://github.com/yuvalsuede/agent-media-skill)) |
-| `ugc-content-factory/` | Route B — multi-shot | Director-first UGC: creative brief → visual beat sheet → synchronized script → assembled Kling video prompts (from [ugc-factory-skill](https://github.com/TheMattBerman/ugc-factory-skill)) |
+```
+almighty-ugc-factory/
+  SKILL.md                     <- master router (start here)
+  ai-ugc-video-production/     <- Route A: talking-head scripts
+  ugc-content-factory/         <- Route B: multi-shot director-first prompts
+```
 
-All skills are prompts-only: no video/image generation, no API keys,
-no credits.
+Route A material from [agent-media-skill](https://github.com/yuvalsuede/agent-media-skill);
+Route B material from [ugc-factory-skill](https://github.com/TheMattBerman/ugc-factory-skill).
+Prompts only: no generation, no API keys, no credits.
